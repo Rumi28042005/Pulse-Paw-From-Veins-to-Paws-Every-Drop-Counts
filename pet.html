@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register as Dog Parent</title>
+    <script src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg" crossorigin="anonymous"></script>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 26px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 i {
+            color: #8a0000;
+            font-size: 28px;
+        }
+
+        /* Form Styling */
+        form {
+            background: white;
+            max-width: 420px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin: 12px 0 5px;
+            font-weight: bold;
+            font-size: 14px;
+            color: #444;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            padding: 8px;
+            margin-bottom: 12px;
+            background: #fff;
+        }
+
+        .input-container i {
+            font-size: 16px;
+            color: #8a0000;
+            margin-right: 10px;
+        }
+
+        input {
+            width: 100%;
+            border: none;
+            font-size: 16px;
+            outline: none;
+            padding: 8px;
+        }
+
+        /* Submit Button */
+        button {
+            background: #0056b3;
+            color: white;
+            padding: 12px;
+            border: none;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #003d82;
+            transform: scale(1.05);
+        }
+
+        /* Back to Home Button */
+        .back-home-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 20px;
+            background: #8a0000;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .back-home-btn:hover {
+            background: #700000;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h2><i class="fas fa-dog"></i> Register as a Dog Parent</h2>
+
+    <form action="submit_dog_parent.php" method="POST">
+        <label for="name">Full Name:</label>
+        <div class="input-container">
+            <i class="fas fa-user"></i>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <label for="phone">Phone Number:</label>
+        <div class="input-container">
+            <i class="fas fa-phone"></i>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+
+        <label for="dog-breed">Dog Breed:</label>
+        <div class="input-container">
+            <i class="fas fa-paw"></i>
+            <input type="text" id="dog-breed" name="dog-breed" required>
+        </div>
+
+        <label for="blood-group">Dog's Blood Group:</label>
+        <div class="input-container">
+            <i class="fas fa-heart"></i>
+            <input type="text" id="blood-group" name="blood-group" required>
+        </div>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <a href="/homepage" class="back-home-btn">⬅ Back to Home</a>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Blood</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* General Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ff5757, #ff9999);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container */
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Heading */
+        h2 {
+            color: #d9534f;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .input-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .input-container i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #d9534f;
+            font-size: 16px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            padding-left: 35px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: 0.3s ease-in-out;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #d9534f;
+            outline: none;
+            box-shadow: 0 0 5px rgba(217, 83, 79, 0.5);
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        /* Button */
+        button {
+            background: #d9534f;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #c9302c;
+            box-shadow: 0 4px 8px rgba(217, 83, 79, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Request Blood</h2>
+        <form action="#" method="post">
+            
+            <div class="input-container">
+                <i class="fa fa-user"></i>
+                <input type="text" id="name" name="name" placeholder="Full Name" required>
+            </div>
+
+            <div class="input-container">
+                <i class="fa fa-tint"></i>
+                <select id="blood-group" name="blood-group" required>
+                    <option value="" disabled selected>Select Blood Group</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="DEA 1.1">DEA 1.1</option>
+                    <option value="DEA 1.2">DEA 1.2</option>
+                    <option value="DEA 1.3">DEA 1.3</option>
+                    <option value="DEA 4">DEA 4</option>
+                    <option value="DEA 5">DEA 5</option>
+                    <option value="DEA 6">DEA 6</option>
+                    <option value="DEA 7">DEA 7</option>
+                    <option value="DEA 8">DEA 8</option>
+                    
+                </select>
+            </div>
+
+            <div class="input-container">
+                <i class="fa fa-phone"></i>
+                <input type="tel" id="phone" name="phone" placeholder="Contact Number" required>
+            </div>
+
+            <div class="input-container">
+                <i class="fa fa-hospital"></i>
+                <input type="text" id="hospital" name="hospital" placeholder="Hospital Name" required>
+            </div>
+
+            <div class="input-container">
+                <i class="fa fa-city"></i>
+                <input type="text" id="city" name="city" placeholder="City" required>
+            </div>
+
+            <div class="input-container">
+                <i class="fa fa-comment"></i>
+                <textarea id="message" name="message" rows="3" placeholder="Additional Message"></textarea>
+            </div>
+
+            <button type="submit">Request Now</button>
+        </form>
+    </div>
+</body>
+</html>

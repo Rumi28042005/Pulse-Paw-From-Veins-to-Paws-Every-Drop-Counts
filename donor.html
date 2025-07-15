@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register as Donor</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #ffebee;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+        h2 {
+            color: #8a0303;
+            margin-bottom: 20px;
+        }
+        .input-box {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #8a0303;
+            border-radius: 5px;
+        }
+        .btn {
+            background: #8a0303;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background: #660202;
+        }
+        a {
+            text-decoration: none;
+            color: #8a0303;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Register as Donor</h2>
+        <form action="register_donor_backend.py" method="POST">
+            <input type="text" class="input-box" name="name" placeholder="Full Name" required>
+            <input type="email" class="input-box" name="email" placeholder="Email" required>
+            <input type="text" class="input-box" name="phone" placeholder="Phone Number" required>
+            <select class="input-box" name="blood_type" required>
+                <option value="" disabled selected>Select Blood Type</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+            <input type="text" class="input-box" name="location" placeholder="Location (City, State)" required>
+            <button type="submit" class="btn">Register</button>
+        </form>
+        <a href="/homepage">Back to Home</a>
+    </div>
+
+</body>
+</html>

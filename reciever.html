@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register as Receiver</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #ffebee;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .register-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+        h2 {
+            color: #8a0303;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .input-box, .select-box {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 2px solid #8a0303;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .input-box:focus, .select-box:focus {
+            border-color: #660202;
+            outline: none;
+            box-shadow: 0 0 5px rgba(138, 3, 3, 0.5);
+        }
+        .btn {
+            background: #8a0303;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #660202;
+            transform: scale(1.05);
+        }
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #8a0303;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        a:hover {
+            color: #660202;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-box">
+        <h2>Register as Receiver</h2>
+        <form>
+            <input type="text" class="input-box" placeholder="Full Name" required>
+            <input type="email" class="input-box" placeholder="Email" required>
+            
+            <!-- Blood Type Dropdown -->
+            <select class="select-box" required>
+                <option value="" disabled selected>Select Blood Type</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+
+            <input type="text" class="input-box" placeholder="Phone Number" required>
+            <input type="text" class="input-box" placeholder="Address" required>
+            <button type="submit" class="btn">Register</button>
+        </form>
+        <a href="/homepage">Back to Home</a>
+    </div>
+</body>
+</html>

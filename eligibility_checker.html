@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eligibility Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #660000;
+            text-align: center;
+            margin: 20px;
+        }
+        .container {
+            background: #ffcccc;
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 0 15px rgba(102, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+        label, select, input {
+            display: block;
+            margin: 10px auto;
+            width: 80%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #660000;
+            background: #ffeeee;
+            color: #660000;
+        }
+        button {
+            background: #660000;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #990000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Blood Donation Eligibility Checker</h2>
+        <label for="donorType">Are you a:</label>
+        <select id="donorType" onchange="showQuestions()">
+            <option value="">-- Select --</option>
+            <option value="human">Human</option>
+            <option value="dog">Dog</option>
+        </select>
+        
+        <div id="questions" style="display: none;">
+            <label for="weight">Do you weigh more than 50kg (humans) / 50lbs (dogs)?</label>
+            <select id="weight">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            
+            <label for="health">Are you in good health (no chronic diseases)?</label>
+            <select id="health">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            
+            <label for="medication">Are you free from major medications (except preventive meds)?</label>
+            <select id="medication">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            
+            <div id="humanQuestions" style="display: none;">
+                <label for="age">(Humans) Are you between 18-65 years old?</label>
+                <select id="age">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                
+                <label for="pregnant">(Humans) Are you currently pregnant or breastfeeding?</label>
+                <select id="pregnant">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                
+                <label for="recentDonation">(Humans) Have you donated blood in the last 3-4 months?</label>
+                <select id="recentDonation">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+            
+            <div id="dogQuestions" style="display: none;">
+                <label for="vaccines">(Dogs) Are you up to date on vaccines?</label>
+                <select id="vaccines">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                
+                <label for="calm">(Dogs) Is your dog calm and cooperative?</label>
+                <select id="calm">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+            <button onclick="checkEligibility()">Check Eligibility</button>
+            <p id="result"></p>
+        </div>
+    </div>
+    
+    <script>
+        function showQuestions() {
+            let type = document.getElementById("donorType").value;
+            let questionsDiv = document.getElementById("questions");
+            let humanQuestions = document.getElementById("humanQuestions");
+            let dogQuestions = document.getElementById("dogQuestions");
+            
+            if (type === "human") {
+                questionsDiv.style.display = "block";
+                humanQuestions.style.display = "block";
+                dogQuestions.style.display = "none";
+            } else if (type === "dog") {
+                questionsDiv.style.display = "block";
+                humanQuestions.style.display = "none";
+                dogQuestions.style.display = "block";
+            } else {
+                questionsDiv.style.display = "none";
+            }
+        }
+
+        function checkEligibility() {
+            let donorType = document.getElementById("donorType").value;
+            let weight = document.getElementById("weight").value;
+            let health = document.getElementById("health").value;
+            let medication = document.getElementById("medication").value;
+            let result = document.getElementById("result");
+            
+            if (donorType === "human") {
+                let age = document.getElementById("age").value;
+                let pregnant = document.getElementById("pregnant").value;
+                let recentDonation = document.getElementById("recentDonation").value;
+                
+                if (weight === "yes" && health === "yes" && medication === "yes" && age === "yes" && pregnant === "no" && recentDonation === "no") {
+                    result.innerHTML = "✅ You are eligible to donate blood!";
+                    result.style.color = "#008000";
+                } else {
+                    result.innerHTML = "❌ Sorry, you are not eligible to donate blood.";
+                    result.style.color = "#660000";
+                }
+            } else if (donorType === "dog") {
+                let vaccines = document.getElementById("vaccines").value;
+                let calm = document.getElementById("calm").value;
+                
+                if (weight === "yes" && health === "yes" && medication === "yes" && vaccines === "yes" && calm === "yes") {
+                    result.innerHTML = "✅ Your dog is eligible to donate blood!";
+                    result.style.color = "#008000";
+                } else {
+                    result.innerHTML = "❌ Sorry, your dog is not eligible to donate blood.";
+                    result.style.color = "#660000";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
